@@ -9,6 +9,6 @@
         "@babel/preset-react"
     ],
     "plugins": [
-        "react-hot-reloader/babel"
+        "react-hot-loader/babel"
     ]
 }
