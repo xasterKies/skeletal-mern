@@ -4,13 +4,13 @@ import path from 'path'
 import template from './../template'
 import { MongoClient } from 'mongodb'
 
-const CURRENT_WORKING_DIR = process.cwd()
-
 const app = express()
 
-app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
-
 devBundle.compile(app)
+
+const CURRENT_WORKING_DIR = process.cwd()
+
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 app.get('/', (req, res) => {
     res.status(200).send(template())
@@ -25,7 +25,7 @@ app.listen(port, function onStart(err) {
     console.info('Server started on port %s. ', port)
 })
 
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/Skeletal-MERN'
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/SkeletalMern'
 MongoClient.connect(url, (err, db) => {
     console.log("Connected successfully to mongodb server")
     db.close()
