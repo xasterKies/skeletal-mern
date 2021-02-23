@@ -2,7 +2,7 @@ import express from 'express'
 import devBundle from './devBundle'
 import path from 'path'
 import template from './../template'
-import mon
+import { MongoClient } from 'mongodb'
 
 const CURRENT_WORKING_DIR = process.cwd()
 
@@ -23,4 +23,10 @@ app.listen(port, function onStart(err) {
         console.log(err)
     }
     console.info('Server started on port %s. ', port)
+})
+
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/Skeletal-MERN'
+MongoClient.connect(url, (err, db) => {
+    console.log("Connected successfully to mongodb server")
+    db.close()
 })
