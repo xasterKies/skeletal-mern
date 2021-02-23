@@ -8,9 +8,9 @@ const CURRENT_WORKING_DIR = process.cwd()
 
 const app = express()
 
-devBundle.compile(app)
-
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
+
+devBundle.compile(app)
 
 app.get('/', (req, res) => {
     res.status(200).send(template())
