@@ -1,28 +1,47 @@
 {
-  "name": "skeletal-mern",
+  "name": "mern-simplesetup",
   "version": "1.0.0",
-  "description": "",
+  "description": "mern simple setup app",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xasterKies/skeletal-mern.git"
+    "url": "git+https://github.com/xasterKies/mern-simplesetup.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xasterKies/skeletal-mern/issues"
+    "url": "https://github.com/xasterKies/mern-simplesetup/issues"
   },
-  "homepage": "https://github.com/xasterKies/skeletal-mern#readme",
+  "homepage": "https://github.com/xasterKies/mern-simplesetup#readme",
   "dependencies": {
-    "@babel/core": "^7.18.10",
-    "@babel/preset-env": "^7.18.10",
-    "babel-loader": "^8.2.5",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-node-externals": "^3.0.0"
+    "@hot-loader/react-dom": "16.13.0",
+    "express": "4.17.1",
+    "mongodb": "3.5.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-hot-loader": "4.12.20",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "helmet": "^3.22.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/preset-env": "7.9.0",
+    "@babel/preset-react": "7.9.4",
+    "babel-loader": "8.1.0",
+    "nodemon": "2.0.2",
+    "webpack": "4.42.1",
+    "webpack-cli": "3.3.11",
+    "webpack-dev-middleware": "3.7.2",
+    "webpack-hot-middleware": "2.25.0",
+    "webpack-node-externals": "1.7.2"
+  },
+  "scripts": {
+    "development": "nodemon",
+    "build": "webpack --config webpack.config.client.production.js &&webpack --mode=production --config webpack.config.server.js",
+    "start": "NODE_ENV=production node ./dist/server.generated.js"
   }
 }
