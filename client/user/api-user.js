@@ -76,3 +76,5 @@ const remove = async (params, credidentials) => {
     console.log(err)
   }
 }
+
+export { create, list, read, update, remove }
