@@ -6,7 +6,8 @@ const MainRouter = () => {
     <Switch>
       <Route exact path="/" component={Home}/>
       <Route path="/users" component={Users}/>
-      <Link to="/users"><Users></Users></Link>
+      <Route path="/signup" component={Signup}/>
+      <Link to="/users">Users</Link>
     </Switch>
   </div>)
 }
